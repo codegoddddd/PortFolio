@@ -96,7 +96,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/pencil-case.svg"
+                            <img src="assets/imgs/web-developer.gif"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                 class="icon">
                             <h6 class="title">Web Development</h6>
@@ -107,7 +107,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/responsive.svg"
+                            <img src="assets/imgs/algorithm.gif"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                 class="icon">
                             <h6 class="title">DSA</h6>
@@ -118,7 +118,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/toolbox.svg"
+                            <img src="assets/imgs/neural-net.gif"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                 class="icon">
                             <h6 class="title">Machine Learning</h6>
@@ -129,7 +129,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/analytics.svg"
+                            <img src="assets/imgs/blockchain.gif"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                 class="icon">
                             <h6 class="title">Blockchain</h6>
@@ -150,7 +150,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <a href="https://github.com/codegoddddd/RMS" class="portfolio-card">
-                        <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img"
+                        <img src="assets/imgs/test.gif" class="portfolio-card-img"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
@@ -162,7 +162,7 @@
                 </div>
                 <div class="col-md-4">
                     <a href="https://cropgenie.streamlit.app/" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-2.jpg" class="img-responsive rounded"
+                        <img class="portfolio-card-img" src="assets/imgs/farmer.gif" class="img-responsive rounded"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
@@ -174,7 +174,7 @@
                 </div>
                 <div class="col-md-4">
                     <a href="https://github.com/codegoddddd/realtime-code-editor/tree/main" class="portfolio-card">
-                        <img class="portfolio-card-img" src="assets/imgs/folio-3.jpg" class="img-responsive rounded"
+                        <img class="portfolio-card-img" src="assets/imgs/responsive.gif" class="img-responsive rounded"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                         <span class="portfolio-card-overlay">
                             <span class="portfolio-card-caption">
@@ -391,26 +391,25 @@
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
-            <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form id="contact-form" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                        <input type="text" size="50" class="form-control" placeholder="Your Name" name="from_name" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                        <input type="email" class="form-control" placeholder="Enter Email" name="from_email" required>
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control"
-                            placeholder="Write Something"></textarea>
+                        <textarea name="message" id="message" rows="6" class="form-control" placeholder="Write Something"></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
                     </div>
                 </div>
-            </form><!-- end of contact form -->
-        </div><!-- end of container -->
-    </section><!-- end of contact section -->
+            </form>
+        </div>
+    </section>
+    
 
     <!-- footer -->
     <div class="container">
@@ -440,6 +439,53 @@
 
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
+
+    <!-- email-js logic -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "Djot21v_wqxBLQPK2" // Replace with your actual Public Key
+        });
+    })();
+    </script>
+
+
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Collect form data
+            const name = event.target.from_name.value;
+            const email = event.target.from_email.value;
+            const message = event.target.message.value;
+    
+            // Validate form data
+            if (!name || !email || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+    
+            // Send email using EmailJS
+            emailjs.send("service_3d1ot8q", "template_cikb92q", {
+                to_name: "Recipient Name", // Optional, if required
+                from_name: name,
+                from_email: email,
+                message: message
+            }).then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Message sent successfully!');
+            }, function(error) {
+                console.log('FAILED...', error);
+                alert('Failed to send message. Please try again later.');
+            });
+        });
+    </script>
+    
+    
+    
 
 </body>
 
